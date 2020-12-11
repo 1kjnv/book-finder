@@ -4,12 +4,12 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Main from './pages/Main';
 import BookDetails from './pages/BookDetails';
 
-const Routes = () => {
+function Routes() {
   return (
     <BrowserRouter>
       <Switch>
         <Route path="/" component={Main} exact />
-        <Route path="/book/:book_id" component={BookDetails} />
+        <Route path="/books/:book_id" component={BookDetails} />
       </Switch>
     </BrowserRouter>
   );

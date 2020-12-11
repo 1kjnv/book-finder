@@ -2,25 +2,25 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import api from '../../services/api';
-import Loading from '../../components/Loading/index';
+import Loading from '../../components/Loading';
 
 import { FullPageContainer, Container, LeftBlock, MiddleBlock, RightBlock } from './styles';
 
-const BookDetails = (props) => {
+function BookDetails(props) {
   const [book, setBook] = useState({});
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchBook() {
       setLoading(true);
-      await api.get(`/volumes/${props.match.params.book_id}`).then(({ data: response}) => {
+      await api.get(`/volumes/${props.match.params.book_id}`).then(({ data: response }) => {
         const thumbnailUrl = response.volumeInfo.imageLinks
-          ? response.volumeInfo.imageLinks.thumbnai
+          ? response.volumeInfo.imageLinks.thumbnail
           : 'https://books.google.com.br/googlebooks/images/no_cover_thumb.gif';
 
         let saleInfo;
 
-        if(response.saleInfo.saleability === 'FOR_SALE') {
+        if (response.saleInfo.saleability === 'FOR_SALE') {
           saleInfo = {
             isForSale: true,
             price: response.saleInfo.listPrice.amount,
@@ -47,7 +47,7 @@ const BookDetails = (props) => {
           description: response.volumeInfo.description,
           thumbnailUrl,
           infoLink: response.volumeInfo.infoLink,
-          pagesAmount: response.volumeInfo.pagesCount,
+          pagesAmount: response.volumeInfo.pageCount,
           averageRating: response.volumeInfo.averageRating,
           publisher: response.volumeInfo.publisher,
           publishedDate: response.volumeInfo.publishedDate,
@@ -81,7 +81,7 @@ const BookDetails = (props) => {
 
               <div className="stats">
                 <div className="stat-row">
-                  <label>Author(s):</label> <span>{book.authors ? book.authors.join(', ') : 'UNKNOWN AUTHO'}</span>
+                  <label>Author(s):</label> <span>{book.authors ? book.authors.join(', ') : 'UNKNOWN AUTHOR'}</span>
                 </div>
                 <div className="stat-row">
                   <label>Publisher:</label> <span>{book.publisher}</span>

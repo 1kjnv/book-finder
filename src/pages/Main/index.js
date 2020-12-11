@@ -8,7 +8,7 @@ import { Toast } from '../../services/sweetAlert';
 import { InputSection, SubmitButton, BooksSection, ClearButton, QueryInput } from './styles';
 import BookBlock from '../../components/BookBlock';
 
-const Main = () => {
+function Main() {
   const [error, setError] = useState('');
   const [query, setQuery] = useState('');
   const [books, setBooks] = useState([]);
