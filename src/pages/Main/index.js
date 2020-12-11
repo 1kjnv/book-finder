@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
+// Images
 import svg from '../../assets/images/books.svg';
 
+// Plugins
 import api from '../../services/api';
 import { Toast } from '../../services/sweetAlert';
 
+// Styled components
 import { InputSection, SubmitButton, BooksSection, ClearButton, QueryInput } from './styles';
 import BookBlock from '../../components/BookBlock';
 
@@ -30,7 +33,7 @@ function Main() {
         setLoading(false);
         return Toast.fire({
           icon: 'error',
-          title: 'No Books found with this query',
+          title: 'No books found with this query',
         });
       }
 
@@ -44,7 +47,7 @@ function Main() {
           title: book.volumeInfo.title,
           authors: book.volumeInfo.authors,
           description: book.volumeInfo.description,
-          thumbnailUrl
+          thumbnailUrl,
         };
       });
 
@@ -55,15 +58,15 @@ function Main() {
     });
   }
 
-  function handleInput(e) {
-    setQuery(e.target.value);
+  function handleInput(event) {
+    setQuery(event.target.value);
   }
 
   async function handleSubmit(event) {
     event.preventDefault();
 
-    if(!query) {
-      setError('You must type something');
+    if (!query) {
+      setError('You must type something!');
       setTimeout(() => {
         setError('');
       }, 3000);
@@ -73,8 +76,8 @@ function Main() {
     await fetchBooks();
   }
 
-  function handleClear(e) {
-    e.preventDefault();
+  function handleClear(event) {
+    event.preventDefault();
 
     setQuery('');
     setBooks([]);
@@ -90,6 +93,7 @@ function Main() {
             <h1>
               <span className="logo-blue">Book</span>Finder
             </h1>
+
             <h2>
               The <span className="logo-blue">right place</span> for you to find a book
             </h2>
@@ -97,7 +101,7 @@ function Main() {
 
           <form onSubmit={handleSubmit}>
             <div className="label">
-              <label htmlFor="book">Type author or book name</label>
+              <label htmlFor="book">Type an author or book name...</label>
             </div>
 
             <div className="input">
@@ -135,7 +139,7 @@ function Main() {
         <div className="container">
           {!books.length ? (
             <div className="no-books">
-              <img src={svg} alt="No Books" />
+              <img src={svg} alt="No books" />
               <h1>No books yet, you need to search for some book</h1>
             </div>
           ) : (
@@ -144,7 +148,7 @@ function Main() {
         </div>
       </BooksSection>
     </>
-  )
-};
+  );
+}
 
 export default Main;

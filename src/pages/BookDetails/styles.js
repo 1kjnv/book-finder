@@ -63,8 +63,8 @@ export const LeftBlock = styled.aside`
   justify-content: space-between;
   border-radius: 0.5rem;
   box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.15);
-  animation: $(fade) 1s ease;
-
+  animation: ${fade} 1s ease;
+ 
   div.title-and-image {
     display: flex;
 
@@ -74,7 +74,7 @@ export const LeftBlock = styled.aside`
     }
 
     h1 {
-      margin-legt: 5px;
+      margin-left: 5px;
       font-size: 1.4rem;
       font-family: 'Space Mono', monospace;
       font-weight: 500;

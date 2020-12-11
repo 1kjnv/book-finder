@@ -3,7 +3,7 @@ import styled, { keyframes, css } from 'styled-components';
 const rotate = keyframes`
   from {
     transform: rotate(0deg);
-  }
+  } 
   to {
     transform: rotate(360deg);
   }
@@ -12,36 +12,36 @@ const rotate = keyframes`
 const fadeFromBottom = keyframes`
   from {
     opacity: 0;
-    transform: translateY(25px);
+    transform: translateY(25px)
   }
-
+  
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0)
   }
 `;
 
 const fadeFromLeft = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-30px)
   }
-
+  
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0)
   }
 `;
 
 const fadeFromRight = keyframes`
   from {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(30px)
   }
-
+  
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateX(0)
   }
 `;
 
@@ -97,7 +97,7 @@ export const InputSection = styled.section`
       width: 100%;
       font-size: 1.25rem;
       text-align: start;
-      margin-bottom: 0.4;
+      margin-bottom: 0.4rem;
     }
 
     .input {
@@ -169,7 +169,7 @@ export const SubmitButton = styled.button.attrs((props) => ({
   cursor: pointer;
   background-color: #fff;
   transition: background 0.25s ease;
-  font-size: 1.07rem;
+  font-size: 0.5rem;
 
   i {
     transition: transform 0.25s ease;
@@ -195,8 +195,7 @@ export const SubmitButton = styled.button.attrs((props) => ({
         animation: ${rotate} 1.5s linear infinite;
         color: var(--color-primary);
       }
-    `
-  }
+    `}
 `;
 
 export const BooksSection = styled.section`
@@ -246,19 +245,22 @@ export const BooksSection = styled.section`
 
 export const ClearButton = styled.button`
   width: 10%;
-  height: 100%;
+  height: 80%;
   padding: 0.5rem 0;
   border: none;
   outline: none;
   cursor: pointer;
-  background-color: var(--color-secondary);
-  font-size: 1.07rem;
+  background-color: var(--color-clear);
+  font-size: 0.5rem;
   color: var(--white);
 `;
 
 export const QueryInput = styled.input.attrs((props) => ({
   width70: props.width70,
 }))`
+
+  width: 80%;
+
   &[width70] {
     width: 70%;
   }
