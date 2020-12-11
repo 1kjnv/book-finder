@@ -102,13 +102,13 @@ export const BookBlock = styled.div`
     }
   }
 
-  @media (max-width: 570) {
+  @media (max-width: 570px) {
     .thumbnail {
-      width: 35%;
+      width: 40%;
     }
 
     .book-data {
-      width: 65%;
+      width: 60%;
     }
   }
 `;

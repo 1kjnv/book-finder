@@ -109,6 +109,10 @@ export const LeftBlock = styled.aside`
     height: 80%;
     order: 1;
 
+    h1 {
+      margin-bottom: 20px;
+    }
+
     overflow-y: scroll;
 
     /* Scroll width */
@@ -152,7 +156,7 @@ export const MiddleBlock = styled.div`
   height: 100%;
   width: 70%;
 
-  animation: $(fade) 1.5s ease;
+  animation: ${fade} 1.5s ease;
 
   ${(props) =>
     !props.cover2Columns &&

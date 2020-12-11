@@ -13,8 +13,8 @@ const BookBlock = (props) => {
       </div>
       <div className="book-data">
         <div className="main-info">
-          <h3>{title}</h3>
-          <h5>{authors ? authors.join(', ') : ''}</h5>
+          <h3>{title.slice(0,13)}</h3>
+          <h5>{authors ? authors.join(', ').slice(0, 13) : ''}</h5>
         </div>
         <p>{description}</p>
         <div className="details">
