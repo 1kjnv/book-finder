@@ -1,0 +1,9 @@
+version: "3"
+services:
+  book-finder:
+    container_name: book-finder
+    image: khon6100/book-finder:v1
+    working_dir: /usr/src/app
+    command: sh -c "npm install && npm start"
+    ports:
+      - "49005:3000"
