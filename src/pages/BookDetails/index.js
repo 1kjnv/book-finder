@@ -116,7 +116,7 @@ function BookDetails(props) {
                   <h4>{book.subtitle}</h4>
                   <div className="categories">
                     {book.categories.map((category, index) => (
-                      <span key={index}>{category}</span>
+                      <span key={index}>#{category}</span>
                     ))}
                   </div>
                 </div>
@@ -127,8 +127,23 @@ function BookDetails(props) {
                 </div>
 
                 <div className="button-row">
-                  <a href={book.infoLink}>
+                  <a href={book.infoLink} target="_blank">
                     BUY THIS BOOK
+                    <i className="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </RightBlock>
+            )}
+
+            {book.saleInfo && !book.saleInfo.isForSale && (
+              <RightBlock>
+                <div className="book-not-on-sale">
+                  <h2>Unfortunately, this book is not on sale</h2>
+                </div>
+
+                <div className="button-row">
+                  <a href="https://www.amazon.com/" target="_blank">
+                    Search Amazon
                     <i className="fas fa-external-link-alt"></i>
                   </a>
                 </div>

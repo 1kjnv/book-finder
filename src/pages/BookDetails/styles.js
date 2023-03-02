@@ -291,6 +291,17 @@ export const RightBlock = styled.div`
     }
   }
 
+  .book-not-on-sale {
+    margin: 50% 0 20% 0;
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 500;
+      font-family: 'Space Mono', monospace;
+      text-align: center;
+    }
+  }
+
   .price-row {
     display: flex;
     flex-direction: column;
